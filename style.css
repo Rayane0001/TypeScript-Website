@@ -1,0 +1,183 @@
+/* 🌌 Réinitialisation et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 🌟 Ajout d'un fond étoilé animé */
+.stars, .stars2, .stars3 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stars {
+    background: radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 80% 60%, white, transparent),
+    radial-gradient(2px 2px at 50% 80%, white, transparent);
+    animation: moveStars 50s linear infinite;
+}
+
+.stars2 {
+    background: radial-gradient(1px 1px at 10% 20%, white, transparent),
+    radial-gradient(1px 1px at 90% 70%, white, transparent),
+    radial-gradient(1px 1px at 40% 50%, white, transparent);
+    animation: moveStars 100s linear infinite;
+}
+
+.stars3 {
+    background: radial-gradient(1px 1px at 5% 15%, white, transparent),
+    radial-gradient(1px 1px at 85% 55%, white, transparent),
+    radial-gradient(1px 1px at 60% 90%, white, transparent);
+    animation: moveStars 150s linear infinite;
+}
+
+@keyframes moveStars {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-100px); }
+}
+
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* 🚀 HEADER */
+header {
+    text-align: center;
+    padding: 40px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 🌌 SECTIONS */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 40px 0;
+}
+
+/* Conteneur des acteurs et films */
+#acteurs-section, #films-section {
+    width: 80%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 🎭 TITRES DES SECTIONS */
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ffcc70, #ff8a00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🚀 GRILLE FLEXIBLE */
+#acteurs, #films {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 🎬 CARTES ACTEURS & FILMS */
+.acteur, .film {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.acteur:hover, .film:hover {
+    transform: scale(1.05);
+}
+
+/* 🎭 Acteurs & Films : Titres */
+.acteur h3, .film h3 {
+    font-size: 1.6rem;
+    color: #ffcc70;
+    margin-bottom: 10px;
+}
+
+/* 📜 Infos */
+p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+strong {
+    color: white;
+}
+
+/* 🎭 Listes */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* 🚀 ANIMATION COSMIQUE */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container, header, main {
+    position: relative;
+    z-index: 1; /* ✅ Assure que le contenu est visible par-dessus les étoiles */
+}

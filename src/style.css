@@ -1,0 +1,213 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #3178c6aa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* 📜 Phrase du Jour */
+#phrase {
+  margin: 20px auto;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  max-width: 700px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#phrase p {
+  margin: 0;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 🎬 Contenu de la cinémathèque */
+#cinema {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 🌌 Sections Acteurs & Films */
+#acteurs-section, #films-section {
+  width: 100%;
+  padding: 20px;
+}
+
+#acteurs, #films {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 🎭 Cartes Acteurs & Films */
+.acteur, .film {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.acteur:hover, .film:hover {
+  transform: scale(1.05);
+}
+
+/* 🌟 Effet Étoilé Magique */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10; /* Plus haut que le fond mais sous le contenu */
+  pointer-events: none; /* Empêche les étoiles de bloquer les interactions */
+}
+
+.stars {
+  background: radial-gradient(2px 2px at 20% 30%, white, transparent),
+  radial-gradient(2px 2px at 80% 60%, white, transparent),
+  radial-gradient(2px 2px at 50% 80%, white, transparent);
+  animation: moveStars 50s linear infinite;
+  opacity: 0.6;
+}
+
+.stars2 {
+  background: radial-gradient(1px 1px at 10% 20%, white, transparent),
+  radial-gradient(1px 1px at 90% 70%, white, transparent),
+  radial-gradient(1px 1px at 40% 50%, white, transparent);
+  animation: moveStars 100s linear infinite;
+  opacity: 0.4;
+}
+
+.stars3 {
+  background: radial-gradient(1px 1px at 5% 15%, white, transparent),
+  radial-gradient(1px 1px at 85% 55%, white, transparent),
+  radial-gradient(1px 1px at 60% 90%, white, transparent);
+  animation: moveStars 150s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-200px); }
+}
+
+/* 🌟 Ajout d'une légère brume cosmique */
+.stars-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 80%);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.2;
+}
