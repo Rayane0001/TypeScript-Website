@@ -3,13 +3,13 @@
 
 This project is a simple TypeScript web application for managing and displaying information about actors and films. It was built using **Vite** and demonstrates basic DOM manipulation, event handling, and TypeScript class management.
 
+## 📸 Screenshot
+![App Screenshot](./images/screenshot.png)
+
 ## 📦 Technologies Used
 - **TypeScript** for type-safe code.
 - **Vite** for fast project setup and development.
 - **HTML & CSS** for structuring and styling the interface.
-
-## 📸 Screenshot
-![App Screenshot](./images/screenshot.png)
 
 ## ⚙️ Setup Instructions
 
