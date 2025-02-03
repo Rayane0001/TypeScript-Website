@@ -29,8 +29,10 @@ describe('Tests de la classe Acteur', () => {
 
     it('devrait permettre d\'ajouter un film', () => {
         const acteur = new Acteur("Tom", "Hooper", "United Kingdom", new Date(1972, 2, 3));
-        const film1 = new Film();
-        const film2 = new Film();
+
+        // Fournir les arguments nécessaires au constructeur
+        const film1 = new Film("Inception", 2010, 1000000);
+        const film2 = new Film("The Revenant", 2015, 800000);
 
         expect(acteur.addFilm(film1)).toBe(true);
         expect(acteur.addFilm(film1)).toBe(false); // Ne doit pas ajouter deux fois le même film
